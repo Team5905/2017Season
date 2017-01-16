@@ -10,8 +10,12 @@ If you have not already done so, please follow the instructions on
 https://wpilib.screenstepslive.com/s/4485/m/13809/l/599681-installing-eclipse-c-java to install Eclipse. Note that
 you should only install Eclipse Luna, Mars or Neon.
 
+Subsystems specification: Please see this google doc - https://docs.google.com/document/d/1LRsyrW69C__tKCmHrAlR3e2-uOJq-H9EDcl4Hh2apeM/edit?usp=sharing
+
+
 
 Vision Processing Code details
 
-To be added
+Vision processing specification: Please see this google doc - https://docs.google.com/document/d/1hgoXlNOUsHWc4B3tSDBHalziL-713E99xoWAXOGf8jE/edit?usp=sharing
+
 
