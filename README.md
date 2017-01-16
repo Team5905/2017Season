@@ -18,4 +18,6 @@ Vision Processing Code details
 
 Vision processing specification: Please see this google doc - https://docs.google.com/document/d/1hgoXlNOUsHWc4B3tSDBHalziL-713E99xoWAXOGf8jE/edit?usp=sharing
 
+Open CV software (to be used for vision processing) - http://opencv.org/
+
 
