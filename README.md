@@ -20,4 +20,6 @@ Vision processing specification: Please see this google doc - https://docs.googl
 
 Open CV software (to be used for vision processing) - http://opencv.org/
 
+Google slide showing angle calculation math shown here - https://drive.google.com/open?id=1UzFmwb65tK3EmGIONTz5kCY8dcE0-CvK9UFQ518dYRg
+
 
