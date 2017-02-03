@@ -5,9 +5,6 @@ import org.usfirst.frc.team5905.robot.commands.*;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class Intake extends Subsystem {
 
     public void initDefaultCommand() {

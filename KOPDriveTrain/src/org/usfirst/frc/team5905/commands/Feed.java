@@ -4,28 +4,28 @@ import org.usfirst.frc.team5905.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class SpinInward extends Command {
-    
-    public SpinInward() {
-        requires(Robot.intake);
+public class Feed extends Command {
+
+    public Feed() {
+    	requires(Robot.elevator);
     }
-    
-    protected void initialize() {
-        Robot.intake.stopSpin();
+
+        protected void initialize() {
+    	Robot.elevator.stopSpin();
     }
-    
+
     protected void execute() {
-        Robot.intake.spin();
+    	Robot.elevator.spin();
     }
-    
+
     protected boolean isFinished() {
-        Robot.intake.stopSpin();
+    	Robot.elevator.stopSpin();
         return false;
     }
-    
+
     protected void end() {
     }
-    
+
     protected void interrupted() {
     }
 }
