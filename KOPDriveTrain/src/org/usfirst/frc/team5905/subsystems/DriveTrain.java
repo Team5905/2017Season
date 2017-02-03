@@ -7,13 +7,7 @@ import org.usfirst.frc.team5905.robot.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 
-/**
- *
- */
 public class DriveTrain extends Subsystem {
-    
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
 	
 	private enum DriveTrainMode {
 		MANUAL, DRIVE_STRAIGHT, ROTATE, DRIVE_BACKWARDS
@@ -22,8 +16,6 @@ public class DriveTrain extends Subsystem {
 	DriveTrainMode mode;
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
     	setDefaultCommand(new MoveWithJoysticks());
     }
     
