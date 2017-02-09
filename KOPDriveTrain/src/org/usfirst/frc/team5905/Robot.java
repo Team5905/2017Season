@@ -9,43 +9,47 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class Robot extends IterativeRobot {
-
-	public static OI oi;
-
-    Command autonomousCommand;
-    SendableChooser chooser;
     
+    Command autonomousCommand;
+    public static OI oi;
     public static DriveTrain driveTrain;
     public static Intake intake;
     public static Elevator elevator;
-
+    public static Shooter shooter;
+    public static Turret turret;
+    
+    
+    
     public void robotInit() {
-		oi = new OI();
-		intake = new Intake();
-		elevator = new Elevator();
+        RobotMap.init();
+        oi = new OI();
+        driveTrain = new DriveTrain();
+        intake = new Intake();
+        elevator = new Elevator();
+        shooter = new Shooter();
+        turret = new Turret();
     }
-	
+    
     public void disabledInit(){
-
+        
     }
-	
-	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
-	}
-
+    
+    public void disabledPeriodic() {
+        Scheduler.getInstance().run();
+    }
+    
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
         if (autonomousCommand != null) autonomousCommand.start();
     }
-
+    
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
     }
-
+    
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
-
+    
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
     }

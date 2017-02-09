@@ -1,21 +1,19 @@
 package org.usfirst.frc.team5905.robot.commands;
 
-import org.usfirst.frc.team5905.robot.Robot;
+import org.usfirst.frc.team5905.robot.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class SpinInward extends Command {
-    
-    public SpinInward() {
-        requires(Robot.intake);
+public class Shoot extends Command {
+
+    public Shoot() {
+        requires(Robot.shooter);
     }
     
     protected void initialize() {
-        Robot.intake.stopSpin();
     }
     
     protected void execute() {
-        Robot.intake.spin();
     }
     
     protected boolean isFinished() {
@@ -23,9 +21,9 @@ public class SpinInward extends Command {
     }
     
     protected void end() {
-        Robot.intake.stopSpin();
     }
     
     protected void interrupted() {
     }
+    
 }
