@@ -5,7 +5,7 @@ import org.usfirst.frc.team5905.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Elevator extends Subsystem {
-
+    
     public void initDefaultCommand() {
         // no default so spins only with toggle
     }

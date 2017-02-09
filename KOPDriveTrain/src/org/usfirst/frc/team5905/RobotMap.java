@@ -18,8 +18,7 @@ public class RobotMap {
     public static SpeedController FRONT_LEFT_SPEED_CONTROLLER;
     public static SpeedController BACK_LEFT_SPEED_CONTROLLER;
     public static SpeedController INTAKE_CONTROLLER;
-    public static SpeedController ELEVATOR_CONTROLLER;
-    public static SpeedController SHOOTER_CONTROLLER;
+    public static SpeedController ELEVATOR_CONTROLLER;]
     public static SpeedController TURRET_CONTROLLER;
 	
 	public static void init(){
