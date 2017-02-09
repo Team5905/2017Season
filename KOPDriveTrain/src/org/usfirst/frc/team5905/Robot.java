@@ -9,9 +9,15 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class Robot extends IterativeRobot {
+<<<<<<< HEAD
 
 	Command autonomousCommand;
 	public static OI oi;
+=======
+    
+    Command autonomousCommand;
+    public static OI oi;
+>>>>>>> Patrick's-Tests
     public static DriveTrain driveTrain;
     public static Intake intake;
     public static Elevator elevator;
@@ -19,6 +25,7 @@ public class Robot extends IterativeRobot {
     public static Turret turret;
     
     
+<<<<<<< HEAD
 
     public void robotInit() {
     	RobotMap.init();
@@ -28,28 +35,39 @@ public class Robot extends IterativeRobot {
 		elevator = new Elevator();
 		shooter = new Shooter();
 		turret = new Turret();
+=======
+    
+    public void robotInit() {
+        RobotMap.init();
+        oi = new OI();
+        driveTrain = new DriveTrain();
+        intake = new Intake();
+        elevator = new Elevator();
+        shooter = new Shooter();
+        turret = new Turret();
+>>>>>>> Patrick's-Tests
     }
-	
+    
     public void disabledInit(){
-
+        
     }
-	
-	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
-	}
-
+    
+    public void disabledPeriodic() {
+        Scheduler.getInstance().run();
+    }
+    
     public void autonomousInit() {
         if (autonomousCommand != null) autonomousCommand.start();
     }
-
+    
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
     }
-
+    
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
-
+    
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
     }

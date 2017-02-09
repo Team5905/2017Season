@@ -23,7 +23,11 @@ public class SpinInward extends Command {
     }
 
     protected void end() {
+<<<<<<< HEAD
     	Robot.intake.stopSpin();
+=======
+        Robot.intake.stopSpin();
+>>>>>>> Patrick's-Tests
     }
 
     protected void interrupted() {

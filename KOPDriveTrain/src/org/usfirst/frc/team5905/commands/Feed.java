@@ -10,7 +10,7 @@ public class Feed extends Command {
     	requires(Robot.elevator);
     }
 
-        protected void initialize() {
+    protected void initialize() {
     	Robot.elevator.stopSpin();
     }
 
@@ -23,7 +23,11 @@ public class Feed extends Command {
     }
 
     protected void end() {
+<<<<<<< HEAD
     	Robot.elevator.stopSpin();
+=======
+        Robot.elevator.stopSpin();
+>>>>>>> Patrick's-Tests
     }
 
     protected void interrupted() {
