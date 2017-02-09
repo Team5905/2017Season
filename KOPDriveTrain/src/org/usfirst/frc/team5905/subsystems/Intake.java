@@ -12,14 +12,12 @@ public class Intake extends Subsystem {
     }
     
     public void spin() {
-        double speed = RobotMap.INTAKE_SPEED;
-        RobotMap.ARM_LEFT_SPEED_CONTROLLER.set(speed);
-        RobotMap.ARM_RIGHT_SPEED_CONTROLLER.set(-1 * speed);
+        RobotMap.INTAKE_CONTROLLER.set(RobotMap.INTAKE_SPEED);
     }
     
     public void stopSpin() {
-        RobotMap.ARM_LEFT_SPEED_CONTROLLER.stopMotor();
-        RobotMap.ARM_RIGHT_SPEED_CONTROLLER.stopMotor();
+        RobotMap.INTAKE_CONTROLLER.stopMotor();
     }
+   
 }
 
