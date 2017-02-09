@@ -1,56 +1,21 @@
-
 package org.usfirst.frc.team5905.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
-import org.usfirst.frc.team5905.robot.subsystems.*;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.Joystick;
+import org.usfirst.frc.team5905.robot.commands.*;
 
-public class Robot extends IterativeRobot {
-
-	public static OI oi;
-
-    Command autonomousCommand;
-    SendableChooser chooser;
+public class OI {
     
-    public static DriveTrain driveTrain;
-    public static Intake intake;
-    public static Elevator elevator;
-
-    public void robotInit() {
-		oi = new OI();
-		intake = new Intake();
-		elevator = new Elevator();
-    }
-	
-    public void disabledInit(){
-
-    }
-	
-	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
-	}
-
-    public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
-        if (autonomousCommand != null) autonomousCommand.start();
-    }
-
-    public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-    }
-
-    public void teleopInit() {
-        if (autonomousCommand != null) autonomousCommand.cancel();
-    }
-
-    public void teleopPeriodic() {
-        Scheduler.getInstance().run();
-    }
+    public Joystick gamepad = new Joystick(0);
+    public JoystickButton reverseButton = new JoystickButton(gamepad, 0);
+    public JoystickButton intakeButton = new JoystickButton(gamepad, 1);
+    public JoystickButton elevatorButton = new JoystickButton(gamepad, 2);
     
-    public void testPeriodic() {
-        LiveWindow.run();
+    public OI(){
+        reverseButton.toggleWhenPressed(new Reverse());
+        intakeButton.toggleWhenPressed(new SpinInward());
+        elevatorButton.toggleWhenPressed(new Feed());
+        
     }
 }
+

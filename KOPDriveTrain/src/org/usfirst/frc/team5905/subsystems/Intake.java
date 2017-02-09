@@ -18,5 +18,6 @@ public class Intake extends Subsystem {
     public void stopSpin() {
         RobotMap.INTAKE_CONTROLLER.stopMotor();
     }
+   
 }
 
