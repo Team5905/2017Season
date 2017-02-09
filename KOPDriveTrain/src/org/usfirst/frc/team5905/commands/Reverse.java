@@ -5,26 +5,25 @@ import org.usfirst.frc.team5905.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Reverse extends Command {
-    
+
     public Reverse() {
-        requires(Robot.driveTrain);
+    	requires(Robot.driveTrain);
     }
-    
+
     protected void initialize() {
-        Robot.driveTrain.reverse();
-        
+    	Robot.driveTrain.reverse();
     }
-    
+
     protected void execute() {
     }
-    
+
     protected boolean isFinished() {
         return false;
     }
-    
+
     protected void end() {
     }
-    
+
     protected void interrupted() {
     }
 }

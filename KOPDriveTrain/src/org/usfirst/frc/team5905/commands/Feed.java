@@ -19,11 +19,11 @@ public class Feed extends Command {
     }
 
     protected boolean isFinished() {
-    	Robot.elevator.stopSpin();
         return false;
     }
 
     protected void end() {
+    	Robot.elevator.stopSpin();
     }
 
     protected void interrupted() {

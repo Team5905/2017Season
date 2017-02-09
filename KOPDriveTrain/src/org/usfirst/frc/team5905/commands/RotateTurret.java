@@ -1,21 +1,21 @@
 package org.usfirst.frc.team5905.robot.commands;
 
-import org.usfirst.frc.team5905.robot.*;
+import org.usfirst.frc.team5905.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class MoveWithJoysticks extends Command {
+public class RotateTurret extends Command {
 
-    public MoveWithJoysticks() {
-    	requires(Robot.driveTrain);
+    public RotateTurret() {
+    	requires(Robot.turret);
     }
 
     protected void initialize() {
-    	Robot.driveTrain.prepareManual();
+    	Robot.turret.stopTurret();
     }
 
     protected void execute() {
-    	Robot.driveTrain.moveWithJoysticks();
+    	Robot.turret.rotateTurret();
     }
 
     protected boolean isFinished() {
@@ -23,6 +23,7 @@ public class MoveWithJoysticks extends Command {
     }
 
     protected void end() {
+    	Robot.turret.stopTurret();
     }
 
     protected void interrupted() {

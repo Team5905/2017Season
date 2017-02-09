@@ -5,27 +5,27 @@ import org.usfirst.frc.team5905.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class SpinInward extends Command {
-    
+
     public SpinInward() {
-        requires(Robot.intake);
+    	requires(Robot.intake);
     }
-    
+
     protected void initialize() {
-        Robot.intake.stopSpin();
+    	Robot.intake.stopSpin();
     }
-    
+
     protected void execute() {
-        Robot.intake.spin();
+    	Robot.intake.spin();
     }
-    
+
     protected boolean isFinished() {
-        Robot.intake.stopSpin();
         return false;
     }
-    
+
     protected void end() {
+    	Robot.intake.stopSpin();
     }
-    
+
     protected void interrupted() {
     }
 }
