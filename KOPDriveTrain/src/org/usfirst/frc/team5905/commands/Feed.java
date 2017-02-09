@@ -23,11 +23,7 @@ public class Feed extends Command {
     }
 
     protected void end() {
-<<<<<<< HEAD
     	Robot.elevator.stopSpin();
-=======
-        Robot.elevator.stopSpin();
->>>>>>> Patrick's-Tests
     }
 
     protected void interrupted() {
