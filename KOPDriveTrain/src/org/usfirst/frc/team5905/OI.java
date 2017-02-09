@@ -6,7 +6,8 @@ import org.usfirst.frc.team5905.robot.commands.*;
 
 public class OI {
 	
-	public Joystick gamepad = new Joystick(0);
+	public Joystick gamepad = new Joystick(1);
+    public Joystick shooterStick = new Joystick (1);
 	public JoystickButton reverseButton = new JoystickButton(gamepad, 0);
 	public JoystickButton intakeButton = new JoystickButton(gamepad, 1);
 	public JoystickButton elevatorButton = new JoystickButton(gamepad, 2);

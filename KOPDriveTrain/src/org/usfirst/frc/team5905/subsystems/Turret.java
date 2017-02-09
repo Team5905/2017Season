@@ -13,7 +13,7 @@ public class Turret extends Subsystem {
     }
     
     public void rotateTurret(){
-    	double power = Robot.oi.gamepad.getRawAxis(RobotMap.TURRET_GAMEPAD_JOYSTICK);
+    	double power = Robot.oi.shooterStick.getTwist();
     	RobotMap.TURRET_CONTROLLER.set(power);
     }
     
