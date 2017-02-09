@@ -16,10 +16,8 @@ public class RobotMap {
     public static SpeedController BACK_RIGHT_SPEED_CONTROLLER;
     public static SpeedController FRONT_LEFT_SPEED_CONTROLLER;
     public static SpeedController BACK_LEFT_SPEED_CONTROLLER;
-    public static SpeedController ARM_RIGHT_SPEED_CONTROLLER;
-    public static SpeedController ARM_LEFT_SPEED_CONTROLLER;
-    public static SpeedController ELEVATOR_RIGHT_SPEED_CONTROLLER;
-    public static SpeedController ELEVATOR_LEFT_SPEED_CONTROLLER;
+    public static SpeedController INTAKE_CONTROLLER;
+    public static SpeedController ELEVATOR_CONTROLLER;
     
     public static void init(){
         
@@ -27,10 +25,8 @@ public class RobotMap {
         BACK_LEFT_SPEED_CONTROLLER = new Victor(1);
         FRONT_RIGHT_SPEED_CONTROLLER = new Victor(2);
         BACK_RIGHT_SPEED_CONTROLLER = new Victor(3);
-        ARM_LEFT_SPEED_CONTROLLER = new Victor(4);
-        ARM_RIGHT_SPEED_CONTROLLER = new Victor(5);
-        ELEVATOR_RIGHT_SPEED_CONTROLLER = new Victor(6);
-        ELEVATOR_LEFT_SPEED_CONTROLLER = new Victor(7);
+        INTAKE_CONTROLLER = new Victor(4);
+        ELEVATOR_CONTROLLER = new Victor(5);
         
         drive = new RobotDrive(0, 1, 2, 3); 
         
