@@ -2,6 +2,9 @@
 package org.usfirst.frc.team5905.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+
+import java.net.ServerSocket;
+
 import org.usfirst.frc.team5905.robot.subsystems.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -17,6 +20,9 @@ public class Robot extends IterativeRobot {
     public static Elevator elevator;
     public static Shooter shooter;
     public static Turret turret;
+    public static ServerSocket sSocket;
+    
+    public static final int SERVER_PORT = 5905;
     
     public void robotInit() {
         RobotMap.init();
@@ -25,7 +31,7 @@ public class Robot extends IterativeRobot {
         intake = new Intake();
         elevator = new Elevator();
         shooter = new Shooter();
-        turret = new Turret();
+        turret = new Turret();  
     }
     
     public void disabledInit(){
@@ -37,6 +43,7 @@ public class Robot extends IterativeRobot {
     }
     
     public void autonomousInit() {
+    	sSocket = new ServerSocket(SERVER_PORT);
         if (autonomousCommand != null) autonomousCommand.start();
     }
     
