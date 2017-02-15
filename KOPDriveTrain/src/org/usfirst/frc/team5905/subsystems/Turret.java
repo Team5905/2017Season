@@ -37,11 +37,11 @@ public class Turret extends PIDSubsystem {
     private final Encoder encoder = RobotMap.turretEncoder;
     
     //These are all constants that need calibration
-    public static final double TURRET_ROTATION_RANGE_IN_DEGREES = 120.0;
-    public static final long ENCODER_PULSES_PER_ROTATION = 400;  // Assuming 100 PPR, but 400 in 4x mode
-    public static final double NUMBER_OF_MOTOR_ROTATIONS_TO_ACHIEVE_ONE_360_TURRET_ROTATION = 40;
+    public static final double TURRET_ROTATION_RANGE_IN_DEGREES = 270.0;
+    public static final long ENCODER_PULSES_PER_ROTATION = 4096;  // Assuming 100 PPR, but 400 in 4x mode
+    public static final double NUMBER_OF_MOTOR_ROTATIONS_TO_ACHIEVE_ONE_360_TURRET_ROTATION = 9.195;
     public static final int MAX_NUMBER_OF_SECONDS_TO_GET_TURRET_TO_LEFT_END = 5;
-    public static final double SPEED_TO_RESET_TURRET = 0.8;
+    public static final double SPEED_TO_RESET_TURRET = 0.3;
     //Position of the turret in degrees from max left extent
     //When turret is moving, this is the set point, not the actual position. The
     //actual position will get to the set point eventually
