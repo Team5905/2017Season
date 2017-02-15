@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class SpinInward extends Command {
 
+    private boolean toggle = false;
+    
     public SpinInward() {
     	requires(Robot.intake);
     }
@@ -15,7 +17,12 @@ public class SpinInward extends Command {
     }
 
     protected void execute() {
-    	Robot.intake.spin();
+        if (Robot.oi.gamepad.getRawButton(Robot.oi.intakeButton))
+            toggle = !toggle;
+        if (toggle)
+            Robot.intake.spin();
+        else
+            Robot.intake.stopSpin();
     }
 
     protected boolean isFinished() {

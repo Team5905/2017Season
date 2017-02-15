@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class Feed extends Command {
 
+    boolean toggle = false;
     public Feed() {
     	requires(Robot.elevator);
     }
@@ -15,7 +16,12 @@ public class Feed extends Command {
     }
 
     protected void execute() {
-    	Robot.elevator.spin();
+        if (Robot.oi.gamepad.getRawButton(Robot.oi.elevatorButton))
+            toggle = !toggle;
+        if (toggle)
+            Robot.elevator.spin();
+        else
+            Robot.elevator.stopSpin();
     }
 
     protected boolean isFinished() {

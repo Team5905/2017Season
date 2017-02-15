@@ -10,17 +10,14 @@ public class OI {
 	public Joystick gamepad = new Joystick(1);
     public Joystick shooterStick = new Joystick (2);
 	public JoystickButton reverseButton = new JoystickButton(gamepad, 0);
-	public JoystickButton intakeButton = new JoystickButton(gamepad, 1);
-	public JoystickButton elevatorButton = new JoystickButton(gamepad, 2);
+	public int intakeButton = 6; //we can just reference buttons by index
+    public int elevatorButton = 8; //this is completely arbitrary
 	public JoystickButton increaseShooterSpeed;
     public JoystickButton decreaseShooterSpeed;
     public JoystickButton moveTurretLeft;
     public JoystickButton moveTurretRight;
 	
 	public OI(){
-		reverseButton.toggleWhenPressed(new Reverse());
-		intakeButton.toggleWhenPressed(new SpinInward());
-		elevatorButton.toggleWhenPressed(new Feed());
 		moveTurretRight = new JoystickButton(gamepad, 6);
 	    moveTurretRight.whenPressed(new TurretMoveRight());
 	    moveTurretLeft = new JoystickButton(gamepad, 5);

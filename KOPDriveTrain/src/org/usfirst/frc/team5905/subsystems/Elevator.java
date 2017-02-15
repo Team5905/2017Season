@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Elevator extends Subsystem {
     
     public void initDefaultCommand() {
-        // no default so spins only with toggle
+        setDefaultCommand(new Feed());
     }
     
     public void spin() {

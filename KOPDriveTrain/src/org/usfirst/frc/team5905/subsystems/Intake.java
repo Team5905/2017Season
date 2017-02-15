@@ -7,8 +7,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Intake extends Subsystem {
 
     public void initDefaultCommand() {
-        //no default so when not toggled, SpinInward doesn't run
-    	
+        setDefaultCommand(new SpinInward());
     }
     
     public void spin() {
