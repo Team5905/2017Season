@@ -11,9 +11,11 @@ public class Shoot extends Command {
     }
     
     protected void initialize() {
+        Robot.oldShooter.stopShooter();
     }
     
     protected void execute() {
+        Robot.oldShooter.shoot();
     }
     
     protected boolean isFinished() {
@@ -21,6 +23,7 @@ public class Shoot extends Command {
     }
     
     protected void end() {
+        Robot.oldShooter.stopShooter();
     }
     
     protected void interrupted() {

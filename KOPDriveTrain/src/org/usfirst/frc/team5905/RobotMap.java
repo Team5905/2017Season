@@ -47,8 +47,8 @@ public class RobotMap {
         turretEncoder.setDistancePerPulse(1.0);
         turretEncoder.setPIDSourceType(PIDSourceType.kRate);
 
-	    //SHOOTER_CONTROLLER = new Victor(6);
-	    //TURRET_CONTROLLER = new Victor(7);
+	    SHOOTER_CONTROLLER = new Victor(6);
+	    TURRET_CONTROLLER = new Victor(7);
 			
 		drive = new RobotDrive(0, 1, 2, 3); 
 		
