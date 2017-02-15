@@ -1,9 +1,9 @@
-package org.usfirst.frc.team5905.robot.subsystems;
+package org.usfirst.frc.team5905.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import org.usfirst.frc.team5905.robot.Robot;
-import org.usfirst.frc.team5905.robot.RobotMap;
-import org.usfirst.frc.team5905.robot.commands.*;
+import org.usfirst.frc.team5905.Robot;
+import org.usfirst.frc.team5905.RobotMap;
+import org.usfirst.frc.team5905.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 

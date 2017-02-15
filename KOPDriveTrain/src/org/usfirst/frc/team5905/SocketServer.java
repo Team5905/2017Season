@@ -3,6 +3,7 @@
  * Author: Nikhil Aggarwal, nikhil0929@gmail.com, Jan 28 2017
  * 
  */
+package org.usfirst.frc.team5905;
 
 import java.net.*;
 import java.util.*;
@@ -11,14 +12,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SocketServer extends JFrame{
-  //public static int SERVER_PORT = 5905;
+  public static int SERVER_PORT = 5905;
   public static String PASSWORD = "r0b0c0rps";
   /*public static void main(String[] args){
     new ServerExtra();
   }*/
   public SocketServer(){
     try{
-      //ServerSocket sSocket = new ServerSocket(SERVER_PORT);
+      ServerSocket sSocket = new ServerSocket(SERVER_PORT);
       System.out.println("Server started at: " + new Date() + " on port 5905. ");
       //Loop that runs server functions
       while(true){

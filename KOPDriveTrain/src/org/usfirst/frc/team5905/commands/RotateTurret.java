@@ -1,21 +1,21 @@
-package org.usfirst.frc.team5905.robot.commands;
+package org.usfirst.frc.team5905.commands;
 
-import org.usfirst.frc.team5905.robot.Robot;
+import org.usfirst.frc.team5905.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class RotateTurret extends Command {
 
     public RotateTurret() {
-    	requires(Robot.turret);
+    	requires(Robot.oldTurret);
     }
 
     protected void initialize() {
-    	Robot.turret.stopTurret();
+    	Robot.oldTurret.stopTurret();
     }
 
     protected void execute() {
-    	Robot.turret.rotateTurret();
+    	Robot.oldTurret.rotateTurret();
     }
 
     protected boolean isFinished() {
@@ -23,7 +23,7 @@ public class RotateTurret extends Command {
     }
 
     protected void end() {
-    	Robot.turret.stopTurret();
+    	Robot.oldTurret.stopTurret();
     }
 
     protected void interrupted() {

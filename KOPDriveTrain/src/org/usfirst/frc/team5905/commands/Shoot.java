@@ -1,13 +1,13 @@
-package org.usfirst.frc.team5905.robot.commands;
+package org.usfirst.frc.team5905.commands;
 
-import org.usfirst.frc.team5905.robot.*;
+import org.usfirst.frc.team5905.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Shoot extends Command {
 
     public Shoot() {
-        requires(Robot.shooter);
+        requires(Robot.oldShooter);
     }
     
     protected void initialize() {

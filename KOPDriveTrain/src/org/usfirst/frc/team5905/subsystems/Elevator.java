@@ -1,6 +1,6 @@
-package org.usfirst.frc.team5905.robot.subsystems;
+package org.usfirst.frc.team5905.subsystems;
 
-import org.usfirst.frc.team5905.robot.RobotMap;
+import org.usfirst.frc.team5905.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
