@@ -13,8 +13,9 @@ public class RobotMap {
 	public static final double DRIVE_SPEED = 1;
 	public static final int INTAKE_SPEED = 1;
 	public static final int ELEVATOR_SPEED = 1;
+	
+	public static final int TURN_SPEED = 1;
 
-    
 
     public static SpeedController FRONT_RIGHT_SPEED_CONTROLLER;
     public static SpeedController BACK_RIGHT_SPEED_CONTROLLER;
