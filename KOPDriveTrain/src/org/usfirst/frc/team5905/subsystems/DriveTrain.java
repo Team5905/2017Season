@@ -34,3 +34,15 @@ public class DriveTrain extends Subsystem {
     }
 }
 
+   public void spin(){
+    	double leftPower = -1 * RobotMap.DRIVE_SPEED; //switch values to negative depending on spin direction
+    	double rightPower = RobotMap.DRIVE_SPEED;
+    	myDrive.tankDrive(leftPower, rightPower);
+    }
+    
+    public void AutoDriveStright(){
+    	double leftPower = RobotMap.DRIVE_SPEED;
+    	double rightPower = RobotMap.DRIVE_SPEED;
+    	myDrive.tankDrive(leftPower, rightPower);
+    }
+
