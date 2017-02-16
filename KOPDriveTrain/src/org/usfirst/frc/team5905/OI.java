@@ -7,8 +7,8 @@ import org.usfirst.frc.team5905.commands.*;
 
 public class OI {
 	
-	public Joystick gamepad = new Joystick(1);
-    public Joystick shooterStick = new Joystick (2);
+	public Joystick gamepad = new Joystick(0);
+    public Joystick shooterStick = new Joystick (1);
 	public JoystickButton reverseButton = new JoystickButton(gamepad, 0);
 	public int intakeButton = 6; //we can just reference buttons by index
     public int elevatorButton = 8; //this is completely arbitrary

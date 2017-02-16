@@ -24,8 +24,8 @@ public class RobotMap {
     public static SpeedController ELEVATOR_CONTROLLER;
     public static SpeedController SHOOTER_CONTROLLER;
     public static SpeedController TURRET_CONTROLLER;
-    public static SpeedController shooterSpeedController;
-    public static SpeedController turretSpeedController;
+    public static TalonSRX shooterSpeedController;
+    public static TalonSRX turretSpeedController;
     public static Encoder turretEncoder;
 	
 	public static void init(){
@@ -36,6 +36,7 @@ public class RobotMap {
 	    BACK_RIGHT_SPEED_CONTROLLER = new Victor(3);
 	    INTAKE_CONTROLLER = new Victor(4);
 	    ELEVATOR_CONTROLLER = new Victor(5);
+        
 	    shooterSpeedController = new TalonSRX(0);
         LiveWindow.addActuator("Shooter", "SpeedController", (TalonSRX) shooterSpeedController);
 

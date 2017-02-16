@@ -24,8 +24,8 @@ public class DriveTrain extends Subsystem {
     }
     
     public void moveWithJoysticks(){
-    	double leftPower = -1 * RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.LEFT_GAMEPAD_JOYSTICK_Y);
-		double rightPower = -1 * RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.RIGHT_GAMEPAD_JOYSTICK_Y);
+    	double leftPower = RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.LEFT_GAMEPAD_JOYSTICK_Y);
+		double rightPower = RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.RIGHT_GAMEPAD_JOYSTICK_Y);
 		myDrive.tankDrive(leftPower,  rightPower);
     }
     

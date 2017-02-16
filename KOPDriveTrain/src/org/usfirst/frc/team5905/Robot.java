@@ -33,7 +33,9 @@ public class Robot extends IterativeRobot {
         turret = new Turret();      
         intake = new Intake();
         elevator = new Elevator();
-        oi = new OI();        
+        oi = new OI();
+        oldShooter = new ShooterOld();
+        oldTurret = new TurretOld();
     }
     
     public void disabledInit(){

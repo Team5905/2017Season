@@ -1,8 +1,9 @@
 package org.usfirst.frc.team5905.commands;
 
 import org.usfirst.frc.team5905.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.Timer;
+
 
 public class SpinInward extends Command {
 
@@ -17,8 +18,10 @@ public class SpinInward extends Command {
     }
 
     protected void execute() {
-        if (Robot.oi.gamepad.getRawButton(Robot.oi.intakeButton))
+        if (Robot.oi.gamepad.getRawButton(Robot.oi.intakeButton)){
             toggle = !toggle;
+            Timer.delay(.25);
+        }
         if (toggle)
             Robot.intake.spin();
         else

@@ -1,8 +1,8 @@
 package org.usfirst.frc.team5905.commands;
 
 import org.usfirst.frc.team5905.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.Timer;
 
 public class Feed extends Command {
 
@@ -16,8 +16,10 @@ public class Feed extends Command {
     }
 
     protected void execute() {
-        if (Robot.oi.gamepad.getRawButton(Robot.oi.elevatorButton))
+        if (Robot.oi.gamepad.getRawButton(Robot.oi.elevatorButton)){
             toggle = !toggle;
+            Timer.delay(.25);
+        }
         if (toggle)
             Robot.elevator.spin();
         else
