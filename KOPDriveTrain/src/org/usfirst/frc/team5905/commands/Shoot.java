@@ -7,15 +7,24 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Shoot extends Command {
 
     public Shoot() {
-        requires(Robot.oldShooter);
+        requires(Robot.lowGoal);
     }
     
     protected void initialize() {
-        Robot.oldShooter.stopShooter();
+    	Robot.lowGoal.stopSpin();
     }
     
     protected void execute() {
-        Robot.oldShooter.shoot();
+        if(Robot.oi.gamepad.getRawAxis(3) > 0.5){
+        	RobotMap.SHOOT_SPEED = Robot.oi.gamepad.getRawAxis(3);
+        	Robot.lowGoal.shooterSpin();
+        }
+        else if (Robot.oi.gamepad.getRawAxis(2) > 0.5){
+        	RobotMap.INTAKE_SPEED = Robot.oi.gamepad.getRawAxis(2);
+        	Robot.lowGoal.intakeSpin();
+        }
+        else
+        	Robot.lowGoal.stopSpin();
     }
     
     protected boolean isFinished() {
@@ -23,7 +32,7 @@ public class Shoot extends Command {
     }
     
     protected void end() {
-        Robot.oldShooter.stopShooter();
+        Robot.lowGoal.stopSpin();
     }
     
     protected void interrupted() {

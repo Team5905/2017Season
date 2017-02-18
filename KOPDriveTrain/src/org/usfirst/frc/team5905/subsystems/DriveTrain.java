@@ -5,7 +5,6 @@ import org.usfirst.frc.team5905.Robot;
 import org.usfirst.frc.team5905.RobotMap;
 import org.usfirst.frc.team5905.commands.*;
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 
 public class DriveTrain extends Subsystem {
 	
@@ -14,6 +13,7 @@ public class DriveTrain extends Subsystem {
 	}
 	private final RobotDrive myDrive = RobotMap.drive;
 	DriveTrainMode mode;
+	private boolean isReversed = false;
 
     public void initDefaultCommand() {
     	setDefaultCommand(new MoveWithJoysticks());
@@ -29,8 +29,12 @@ public class DriveTrain extends Subsystem {
 		myDrive.tankDrive(leftPower,  rightPower);
     }
     
-    public void reverse(){
-    	myDrive.setInvertedMotor(MotorType.kFrontLeft, true);
+    public void toggleReverse(){
+    	isReversed = !isReversed;
+    	RobotMap.FRONT_LEFT_SPEED_CONTROLLER.setInverted(isReversed);
+    	RobotMap.FRONT_RIGHT_SPEED_CONTROLLER.setInverted(isReversed);
+    	RobotMap.BACK_LEFT_SPEED_CONTROLLER.setInverted(isReversed);
+    	RobotMap.BACK_RIGHT_SPEED_CONTROLLER.setInverted(isReversed);
     }
 }
 

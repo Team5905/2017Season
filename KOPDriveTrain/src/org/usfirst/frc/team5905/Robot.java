@@ -16,26 +16,17 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     public static OI oi;
     public static DriveTrain driveTrain;
-    public static Intake intake;
-    public static Elevator elevator;
-    public static ShooterOld oldShooter;
-    public static TurretOld oldTurret;
-    public static Shooter shooter;
-    public static Turret turret;
+    public static LowGoal lowGoal;
     public static ServerSocket sSocket;
+    
     
     public static final int SERVER_PORT = 5905;
     
     public void robotInit() {
         RobotMap.init();
         driveTrain = new DriveTrain();
-        shooter = new Shooter();
-        turret = new Turret();      
-        intake = new Intake();
-        elevator = new Elevator();
+        lowGoal = new LowGoal();
         oi = new OI();
-        oldShooter = new ShooterOld();
-        oldTurret = new TurretOld();
     }
     
     public void disabledInit(){

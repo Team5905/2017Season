@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5905.commands;
 
-import org.usfirst.frc.team5905.Robot;
+import org.usfirst.frc.team5905.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -11,14 +11,14 @@ public class Reverse extends Command {
     }
 
     protected void initialize() {
-    	Robot.driveTrain.reverse();
+		Robot.driveTrain.toggleReverse();
     }
 
     protected void execute() {
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {
