@@ -2,6 +2,7 @@ package org.usfirst.frc.team5905.commands;
 
 import org.usfirst.frc.team5905.robot.*;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 
@@ -20,7 +21,9 @@ public class AutonomousBrake extends Command {
     protected void execute() {
     	count++;
     	double x = RobotMap.LEFT_DRIVE_ENCODER.getDistance();
-    	if(x > 0) {
+    	Timer.delay(0.01);
+    	double y = RobotMap.LEFT_DRIVE_ENCODER.getDistance();
+    	if(y - x > 0) {
     		Robot.driveTrain.AutoBrake(-1);
     	}
     	else

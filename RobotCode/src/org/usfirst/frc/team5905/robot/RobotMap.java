@@ -7,20 +7,29 @@ public class RobotMap {
     
 	public static RobotDrive drive;
 	
-	public static final int RIGHT_GAMEPAD_JOYSTICK_Y = 5;
-	public static final int LEFT_GAMEPAD_JOYSTICK_Y = 1;
+	public static final int A_BUTTON = 1;
+	public static final int B_BUTTON = 2; 
+	public static final int X_BUTTON = 3;
+	public static final int Y_BUTTON = 4;
+	public static final int L_BUTTON = 5;
+	public static int LEFT_GAMEPAD_JOYSTICK_Y = 1;
+	public static final int L_TRIGGER = 2;
+	public static final int R_TRIGGER = 3;
+	public static final int R_BUTTON = 6;
+	public static int RIGHT_GAMEPAD_JOYSTICK_Y = 5;
 	public static final double DRIVE_SPEED = 1;
 	public static double SHOOT_SPEED = 1;
 	public static double INTAKE_SPEED = 0.3;
-	public static int TURN_SPEED = 1;
+	public static final double TURN_SPEED = 1;
 	public static final double CLIMB_SPEED = 0.2;
-	public static double DISTANCE_PER_PULSE = (5 * 3.14159)/(4096 * 5.25); //0.00073
+	public static double DISTANCE_PER_PULSE = 0.8; // (5 * 3.14159)/(1024 * 5.35); 0.00073
 	
 	public static boolean TURN_DIRECTION = true; //Right for true, left for false
 	public static double TURN_AMOUNT = 1; 
 	public static double STRAIGHT_DISTANCE = 1; //Helps toggle for reverse Command
 
     public static int STRAIGHT = 1;
+    public static boolean DRIVE_POWER = false;
     
     public static double AREA_DIFFERENCE = 0;
     public static double AREA_AVG = 0.5;
@@ -42,7 +51,7 @@ public class RobotMap {
 	public static void init(){
 		
 		LEFT_DRIVE_ENCODER = new Encoder(2,3, false, EncodingType.k4X);
-		RIGHT_DRIVE_ENCODER = new Encoder(0,1, false, EncodingType.k4X);
+		//RIGHT_DRIVE_ENCODER = new Encoder(0,1, false, EncodingType.k4X);
 		FRONT_LEFT_SPEED_CONTROLLER = new Victor(3);
 		//LiveWindow.addActuator("Check", "FRONT_LEFT_SPEED_CONTROLLER", (Victor) FRONT_LEFT_SPEED_CONTROLLER);
 	    BACK_LEFT_SPEED_CONTROLLER = new Victor(4);
@@ -57,7 +66,7 @@ public class RobotMap {
 	    CLIMB_CONTROLLER = new Victor(7);
 			
 		drive = new RobotDrive(FRONT_LEFT_SPEED_CONTROLLER, BACK_LEFT_SPEED_CONTROLLER, FRONT_RIGHT_SPEED_CONTROLLER, BACK_RIGHT_SPEED_CONTROLLER); 
-		drive.setMaxOutput(0.2);
+		drive.setMaxOutput(0.5);
 		
 		driveTrainGyro = new ADXRS450_Gyro();
 	}

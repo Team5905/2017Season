@@ -1,16 +1,10 @@
-package org.usfirst.frc.team5905.robot.commands;
+package org.usfirst.frc.team5905.commands;
 
-import org.usfirst.frc.team5905.robot.*;
-
-import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc.team5905.robot.*;
-
-import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc.team5905.robot.*;
+import org.usfirst.frc.team5905.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team5905.robot.RobotMap;
+import org.usfirst.frc.team5905.RobotMap;
 public class AutonomousSpin extends Command {
 
     double timer = 0;

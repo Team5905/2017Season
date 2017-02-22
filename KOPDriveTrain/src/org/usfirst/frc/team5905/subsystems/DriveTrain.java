@@ -36,7 +36,6 @@ public class DriveTrain extends Subsystem {
     	RobotMap.BACK_LEFT_SPEED_CONTROLLER.setInverted(isReversed);
     	RobotMap.BACK_RIGHT_SPEED_CONTROLLER.setInverted(isReversed);
     }
-}
 
    public void spin(){
     	double leftPower = -1 * RobotMap.DRIVE_SPEED; //switch values to negative depending on spin direction
@@ -49,4 +48,4 @@ public class DriveTrain extends Subsystem {
     	double rightPower = RobotMap.DRIVE_SPEED;
     	myDrive.tankDrive(leftPower, rightPower);
     }
-
+}

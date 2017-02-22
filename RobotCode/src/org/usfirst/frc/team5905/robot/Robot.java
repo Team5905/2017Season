@@ -23,10 +23,10 @@ public class Robot extends IterativeRobot {
     	//RobotMap.SMART_DASHBOARD.putString("Start", "true");
         RobotMap.init();
         lowGoal = new LowGoal();
-        oi = new OI();
         driveTrain = new DriveTrain();
         climber = new Climber();
         autonomousCommand = new AutonomousCommands();
+        oi = new OI();
 
     }
     

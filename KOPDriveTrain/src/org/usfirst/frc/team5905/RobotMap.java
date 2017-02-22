@@ -10,6 +10,8 @@ public class RobotMap {
 	public static final int RIGHT_GAMEPAD_JOYSTICK_Y = 5;
 	public static final int LEFT_GAMEPAD_JOYSTICK_Y = 1;
 	public static final int TURRET_GAMEPAD_JOYSTICK = 2;
+
+	public static final double TURN_SPEED = 1;
 	public static double DRIVE_SPEED = 1;
 	public static double INTAKE_SPEED = 1;
 	public static double SHOOT_SPEED = 1;

@@ -49,7 +49,7 @@ public class AutonomousSpin extends Command {
     }
 
     protected void execute() {
-    	double currentAngle = gyro.getAngle();
+    	double currentAngle = gyro.getAngle(); //feel like this should be below first if branch
     	System.out.println("Gyro Angle: " + currentAngle);
     	if(RobotMap.TURN_DIRECTION) {
             Robot.driveTrain.AutoRightSpin();
@@ -72,11 +72,11 @@ public class AutonomousSpin extends Command {
         //}
     	
     	if (RobotMap.TURN_DIRECTION){
-    		if (currentAngle >= endAngle){
+    		if (currentAngle <= endAngle){
     			exit = true;
     		}
     	} else {
-    		if (currentAngle <= endAngle){
+    		if (currentAngle >= endAngle){
     			exit = true;
     		}
     	}

@@ -31,37 +31,24 @@ public class AutonomousDrive extends Command {
      //maxtime = .01 * theta/RobotMap.DRIVE_SPEED;
      //timer = 0;
      RobotMap.LEFT_DRIVE_ENCODER.reset();
-     RobotMap.RIGHT_DRIVE_ENCODER.reset();
      RobotMap.LEFT_DRIVE_ENCODER.setDistancePerPulse(RobotMap.DISTANCE_PER_PULSE);
-     RobotMap.RIGHT_DRIVE_ENCODER.setDistancePerPulse(RobotMap.DISTANCE_PER_PULSE);
     }
-    // 0.03743640427362351  for 50
+    //104 pulses: 0.3000 - 86.5
+    //157 pulses: 0.45 - 122
+    //136 in 200 pulses
+    //0.8 inches per pulse
     protected void execute() {
 
         Robot.driveTrain.AutoDriveStraight(leftIncrease, rightIncrease);
         System.out.println("Gyro Angle: " + gyro.getAngle());
         
-        leftCount = RobotMap.LEFT_DRIVE_ENCODER.get();
-        rightCount = RobotMap.RIGHT_DRIVE_ENCODER.get();
+        leftCount = RobotMap.LEFT_DRIVE_ENCODER.get();       
         System.out.println("LeftCount: " + leftCount);
-        System.out.println("RightCount: " + rightCount);
         
         leftDistance = RobotMap.LEFT_DRIVE_ENCODER.getDistance();
-        rightDistance = RobotMap.RIGHT_DRIVE_ENCODER.getDistance();
         System.out.println("Left Distance: " + leftDistance);
-        System.out.println("Right Distance: " + rightDistance);
         
-        /*if(leftDistance > rightDistance) {
-        	leftIncrease -= leftDistance - ((leftDistance + rightDistance)/2)/((leftDistance + rightDistance)/2);
-        }
-        else if(rightDistance > leftDistance) {
-        	leftIncrease += rightDistance - ((rightDistance + leftDistance)/2)/((rightDistance + leftDistance)/2);
-        }*/
-        
-        /*if((leftDistance + rightDistance)/2 > RobotMap.STRAIGHT_DISTANCE) {
-        	exit = true;
-        }*/
-        if(leftCount > 50) {
+        if(leftCount > 200) {
         	exit = true;
         }
         

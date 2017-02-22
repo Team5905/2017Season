@@ -7,35 +7,24 @@ import org.usfirst.frc.team5905.commands.*;
 public class OI {
 	
 	public Joystick gamepad;
-    //public Joystick shooterStick;
-	//public JoystickButton reverseButton;
-	//public JoystickButton intakeButton;
-	//public JoystickButton elevatorButton;
+	public JoystickButton reverseButton;
+	public JoystickButton speedToggleButton;
+	public JoystickButton intakeToggleButton;
+	public final int reverseButtonRef = RobotMap.A_BUTTON; //buttons 
+	public final int climbButtonRef = RobotMap.B_BUTTON; //buttons 
+	public final int intakeButtonRef = RobotMap.L_TRIGGER; //axes 
+	public final int shootButtonRef = RobotMap.R_TRIGGER; //axes 
+	public final int speedToggleButtonRef = RobotMap.R_BUTTON;
+	public final int intakeToggleButtonRef = RobotMap.X_BUTTON;
 	
 	public OI(){
-		 gamepad = new Joystick(0);
-		 //shooterStick = new Joystick (1);
-		 
-		 //test code
-		 
-		 
-		 
-		 
-		 //end test code
-		 
-		 
-		 
-		 
-		 
-		 //reverseButton = new JoystickButton(gamepad, 0);
-		// intakeButton = new JoystickButton(gamepad, 6);
-		// elevatorButton = new JoystickButton(gamepad, 2);
-		//intakeButton.whileHeld(new SpinInward());
-		//reverseButton.toggleWhenPressed(new Reverse());
-		//elevatorButton.toggleWhenPressed(new Feed());
-		
+		gamepad = new Joystick(0);
+		reverseButton = new JoystickButton(gamepad, reverseButtonRef);
+		reverseButton.whenPressed(new Reverse());
+		speedToggleButton = new JoystickButton(gamepad, speedToggleButtonRef);
+		speedToggleButton.whenPressed(new DrivePowerChange());
+		//intakeToggleButton.whenPressed(new )
+	
 	}
-	public Joystick getGamepad() {
-        return gamepad;
-    }
+	
 }

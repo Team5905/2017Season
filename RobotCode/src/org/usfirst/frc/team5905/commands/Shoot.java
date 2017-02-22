@@ -17,11 +17,11 @@ public class Shoot extends Command {
     }
 
     protected void execute() {
-    	if (Robot.oi.gamepad.getRawAxis(3) > 0.1) {
+    	if (Robot.oi.gamepad.getRawAxis(Robot.oi.shootButtonRef) > 0.1) {
     		//RobotMap.SHOOT_SPEED = Robot.oi.gamepad.getRawAxis(3);
     		Robot.lowGoal.shootSpin();
     	}
-    	else if(Robot.oi.gamepad.getRawAxis(2) > 0.1) {
+    	else if(Robot.oi.gamepad.getRawAxis(Robot.oi.intakeButtonRef) > 0.1) {
     		//RobotMap.INTAKE_SPEED = Robot.oi.gamepad.getRawAxis(2);
     		Robot.lowGoal.intakeSpin();
     	}

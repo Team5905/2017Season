@@ -7,7 +7,7 @@ import org.usfirst.frc.team5905.robot.OI;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Climb extends Command {
-	boolean check = false;
+	//boolean check = false;
     public Climb() {
     	requires(Robot.climber);
     }
@@ -17,7 +17,7 @@ public class Climb extends Command {
     }
 
     protected void execute() {
-    	if (Robot.oi.gamepad.getRawButton(1)) {
+    	if (Robot.oi.gamepad.getRawButton(Robot.oi.climbButtonRef)) {
     		Robot.climber.Climb();
     	}
     }

@@ -13,14 +13,13 @@ public class AutonomousCommands extends CommandGroup {
 
     public AutonomousCommands() {
         RobotMap.LEFT_DRIVE_ENCODER.reset();
-        RobotMap.RIGHT_DRIVE_ENCODER.reset();
     	//Start Test
     	RobotMap.STRAIGHT_DISTANCE = 0.1;
-    	//addSequential(drive());
-    	//addSequential(brake());
+    	addSequential(drive());
+    	addSequential(brake());
     	RobotMap.TURN_DIRECTION = true;
     	RobotMap.TURN_AMOUNT = 0.3;
-    	addSequential(spin());
+    	//addSequential(spin());
     	//End Test
     	
     	/*Start: Left Side, Left Gear Drop

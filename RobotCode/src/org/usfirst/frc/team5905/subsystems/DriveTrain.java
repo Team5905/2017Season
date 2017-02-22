@@ -12,7 +12,8 @@ public class DriveTrain extends Subsystem {
 		MANUAL, DRIVE_STRAIGHT, ROTATE, DRIVE_BACKWARDS
 	}
 	private final RobotDrive myDrive = RobotMap.drive;
-	DriveTrainMode mode;
+	DriveTrainMode mode; 
+	private boolean isReversed = false;
 
     public void initDefaultCommand() {
     	setDefaultCommand(new MoveWithJoysticks());
@@ -23,15 +24,32 @@ public class DriveTrain extends Subsystem {
     }
     
     public void moveWithJoysticks(){
-    	double leftPower = RobotMap.STRAIGHT * RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.LEFT_GAMEPAD_JOYSTICK_Y);
+    	double leftPower = -1 * RobotMap.STRAIGHT * RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.LEFT_GAMEPAD_JOYSTICK_Y);
     	//leftPower = 0;
-		double rightPower = RobotMap.STRAIGHT * RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.RIGHT_GAMEPAD_JOYSTICK_Y);
+		double rightPower = -1 * RobotMap.STRAIGHT * RobotMap.DRIVE_SPEED * Robot.oi.gamepad.getRawAxis(RobotMap.RIGHT_GAMEPAD_JOYSTICK_Y);
 		//rightPower = 0;
-		myDrive.tankDrive(leftPower,  rightPower);
+		myDrive.tankDrive(leftPower - 0.1,  rightPower);
     }
     
-    public void reverse(){
-    	myDrive.setInvertedMotor(MotorType.kFrontLeft, true);
+    public void toggleReverse(){
+    		//RobotMap.STRAIGHT *= -1;
+		    isReversed = !isReversed;
+			RobotMap.FRONT_LEFT_SPEED_CONTROLLER.setInverted(isReversed);
+			RobotMap.FRONT_RIGHT_SPEED_CONTROLLER.setInverted(isReversed);
+			RobotMap.BACK_LEFT_SPEED_CONTROLLER.setInverted(isReversed);
+			RobotMap.BACK_RIGHT_SPEED_CONTROLLER.setInverted(isReversed);
+			int x = RobotMap.LEFT_GAMEPAD_JOYSTICK_Y;
+			RobotMap.LEFT_GAMEPAD_JOYSTICK_Y = RobotMap.RIGHT_GAMEPAD_JOYSTICK_Y;
+			RobotMap.RIGHT_GAMEPAD_JOYSTICK_Y = x;
+    	
+    }
+    public void toggleSpeed() {
+    	if(RobotMap.DRIVE_POWER) {
+    		RobotMap.drive.setMaxOutput(0.25);
+    	}
+    	else
+    		RobotMap.drive.setMaxOutput(0.5);
+    	RobotMap.DRIVE_POWER = !RobotMap.DRIVE_POWER;
     }
     
     public void AutoRightSpin(){
@@ -52,6 +70,6 @@ public class DriveTrain extends Subsystem {
     	myDrive.tankDrive(leftPower, rightPower);
     }
     public void AutoBrake(double direction) {
-    	myDrive.tankDrive(direction * 0.1, direction * 0.1);
+    	myDrive.tankDrive(direction * .25, direction * .25);
     }
 }
