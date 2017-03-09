@@ -40,9 +40,8 @@ public class SocketServer extends JFrame{
   
   class ClientThread implements Runnable {
 
-    int x;
-    int y;
-    int z;
+    int areaDifference;
+    int areaAverage;
     String ts;
     Socket threadSocket;
     boolean loginStatus = false;
@@ -72,8 +71,8 @@ public class SocketServer extends JFrame{
             doLogin(sOutput, command);
           }
           
-          else if(command[0].equalsIgnoreCase("CURRENT_LOCATION")){
-            doGetCurrentLocation(sOutput, command);
+          else if(command[0].equalsIgnoreCase("SEND_AREAS")){
+            doSendAreas(sOutput, command);
           }
           
           else if(command[0].equalsIgnoreCase("LOGOUT")){
@@ -120,20 +119,19 @@ public class SocketServer extends JFrame{
       sOutput.println("OK logout successful!");
     }
     
-    public void doGetCurrentLocation(PrintWriter sOutput, String[] command) {
+    public void doSendAreas(PrintWriter sOutput, String[] command) {
       if(loginStatus != true){
         sOutput.println("Error: You must login first");
         System.out.println("Error: connection not logged reader");
         return;
       }
-      if(command.length < 4){
-        System.out.println("INFO Not enough parameters after command < 4");
+      if(command.length < 3){
+        System.out.println("INFO Not enough parameters after command < 3");
         sOutput.println("Error: Not enough parameters after command");
         return;
       }
-      x = Integer.parseInt(command[1]);
-      y = Integer.parseInt(command[2]);
-      z = Integer.parseInt(command[3]);
+      areaDifference = Integer.parseInt(command[1]);
+      areaAverage = Integer.parseInt(command[2]);
       try{
         ts = command[4];
       }
@@ -141,7 +139,7 @@ public class SocketServer extends JFrame{
         ts = "0" ; 
       }
       sOutput.println("OK!");
-      System.out.println("INFO recieved current location " + x + " " + y +" " + z + " " + ts);
+      System.out.println("INFO recieved current location " + areaDiffernce + " " + areaAverage + " " + ts);
       return;
     }
   }

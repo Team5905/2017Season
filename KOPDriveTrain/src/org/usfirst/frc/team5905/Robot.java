@@ -1,33 +1,32 @@
 
-package org.usfirst.frc.team5905.robot;
+package org.usfirst.frc.team5905;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import org.usfirst.frc.team5905.robot.subsystems.*;
+
+import java.net.ServerSocket;
+
+import org.usfirst.frc.team5905.subsystems.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
     
     Command autonomousCommand;
     public static OI oi;
     public static DriveTrain driveTrain;
-    public static Intake intake;
-    public static Elevator elevator;
-    public static Shooter shooter;
-    public static Turret turret;
+    public static LowGoal lowGoal;
+    public static ServerSocket sSocket;
     
     
+    public static final int SERVER_PORT = 5905;
     
     public void robotInit() {
         RobotMap.init();
-        oi = new OI();
         driveTrain = new DriveTrain();
-        intake = new Intake();
-        elevator = new Elevator();
-        shooter = new Shooter();
-        turret = new Turret();
+        lowGoal = new LowGoal();
+        oi = new OI();
     }
     
     public void disabledInit(){
@@ -39,6 +38,11 @@ public class Robot extends IterativeRobot {
     }
     
     public void autonomousInit() {
+    	try {
+    		sSocket = new ServerSocket(SERVER_PORT);
+    	} catch (Exception e){
+    		SmartDashboard.putString("Autonomous Init Exception", e.getMessage());
+    	}
         if (autonomousCommand != null) autonomousCommand.start();
     }
     
