@@ -16,6 +16,7 @@ public class Robot extends IterativeRobot {
     public static DriveTrain driveTrain;
     public static LowGoal lowGoal;
     public static Climber climber;
+    //public static SocketServer socketServer;
 
 
     
@@ -25,6 +26,7 @@ public class Robot extends IterativeRobot {
         lowGoal = new LowGoal();
         driveTrain = new DriveTrain();
         climber = new Climber();
+        //socketServer = new SocketServer();
         autonomousCommand = new AutonomousCommands();
         oi = new OI();
 

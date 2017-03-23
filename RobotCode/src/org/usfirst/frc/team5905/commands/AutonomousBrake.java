@@ -21,7 +21,6 @@ public class AutonomousBrake extends Command {
     protected void execute() {
     	count++;
     	double x = RobotMap.LEFT_DRIVE_ENCODER.getDistance();
-    	Timer.delay(0.01);
     	double y = RobotMap.LEFT_DRIVE_ENCODER.getDistance();
     	if(y - x > 0) {
     		Robot.driveTrain.AutoBrake(-1);

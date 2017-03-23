@@ -21,7 +21,8 @@ public class RobotMap {
 	public static double SHOOT_SPEED = 1;
 	public static double INTAKE_SPEED = 0.3;
 	public static final double TURN_SPEED = 1;
-	public static final double CLIMB_SPEED = 0.2;
+	public static final double CLIMB_SPEED = 0.6;
+	public static final double FAST_CLIMB_SPEED = 1.0;
 	public static double DISTANCE_PER_PULSE = 0.8; // (5 * 3.14159)/(1024 * 5.35); 0.00073
 	
 	public static boolean TURN_DIRECTION = true; //Right for true, left for false
@@ -66,7 +67,7 @@ public class RobotMap {
 	    CLIMB_CONTROLLER = new Victor(7);
 			
 		drive = new RobotDrive(FRONT_LEFT_SPEED_CONTROLLER, BACK_LEFT_SPEED_CONTROLLER, FRONT_RIGHT_SPEED_CONTROLLER, BACK_RIGHT_SPEED_CONTROLLER); 
-		drive.setMaxOutput(0.5);
+		drive.setMaxOutput(0.75);
 		
 		driveTrainGyro = new ADXRS450_Gyro();
 	}

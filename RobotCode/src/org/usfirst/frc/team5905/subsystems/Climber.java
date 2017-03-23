@@ -13,7 +13,10 @@ public class Climber extends Subsystem {
 	    public void Climb() {
 			RobotMap.CLIMB_CONTROLLER.set(RobotMap.CLIMB_SPEED);
 		}
-	   
+	    
+	    public void FastClimb() {
+	    	RobotMap.CLIMB_CONTROLLER.set(RobotMap.FAST_CLIMB_SPEED);
+	    }
 		public void stopClimb() {
 			RobotMap.CLIMB_CONTROLLER.stopMotor();
 		}

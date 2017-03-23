@@ -52,6 +52,9 @@ public class DriveTrain extends Subsystem {
     	RobotMap.DRIVE_POWER = !RobotMap.DRIVE_POWER;
     }
     
+    public void gearReceiveReverse(double leftPower, double rightPower) {
+    	myDrive.tankDrive(leftPower, rightPower);
+    }
     public void AutoRightSpin(){
     	double leftPower = RobotMap.DRIVE_SPEED; //switch values to negative depending on spin direction
     	double rightPower = -1 * RobotMap.DRIVE_SPEED;

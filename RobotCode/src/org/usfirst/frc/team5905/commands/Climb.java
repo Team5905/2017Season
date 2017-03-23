@@ -7,23 +7,25 @@ import org.usfirst.frc.team5905.robot.OI;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Climb extends Command {
-	//boolean check = false;
+	boolean check = false;
     public Climb() {
     	requires(Robot.climber);
     }
 
     protected void initialize() {
-    	Robot.climber.stopClimb();
+    	
     }
 
     protected void execute() {
-    	if (Robot.oi.gamepad.getRawButton(Robot.oi.climbButtonRef)) {
+    	check = false;
+    	if(Robot.oi.gamepad.getRawButton(RobotMap.L_BUTTON))
     		Robot.climber.Climb();
-    	}
+    	else
+    		check = true;
     }
 
     protected boolean isFinished() {
-        return false;
+        return check;
     }
 
     protected void end() {
